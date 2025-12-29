@@ -59,18 +59,59 @@
             arr.shift()
             console.log(`shift : ${arr}`)
 
+
             const arr2 = ["aaa", "bbb"]
             // arr = v2,111,222,333,값 추가,값1,"aaa", "bbb"
             const result = arr.concat( arr2 )
-            console.log(`concat result : ${result}`)
+            console.log( result )
             //arr = v2,111,222,333,값 추가,값1,"aaa", "bbb"
             arr.push( arr2 )
-            console.log(`push arr2 : ${arr}`)
+            //arr = [v2,111,222,333,값 추가,값1, ["aaa", "bbb"] ]
+            console.log( "push", arr )
+        }
+        const test4 = () => {
+            const arr = [111,222,333]
+            arr.forEach( printArr )
+            /*
+            for(let i =0 ; i< arr.length ; i++){
+                console.log( i, arr[i] )
+            }
+            */
+            arr.forEach( 
+                function(item, index){
+                    console.log(`1데이터 ${index} : ${item}`)
+                } 
+            )
+            arr.forEach( 
+                (item, index) => {
+                    console.log(`2데이터 ${index} : ${item}`)
+                } 
+            )
+        }
+        function printArr(item, index){
+            console.log(`데이터 ${index} : ${item}`)
+        }
+        const test5 = () => {
+            const arr = [111,222,333]
+            const newArr = arr.map( mapTest )
+            console.log( newArr )
+
+            const newArr2 = arr.map(
+                ( v ) => {
+                    return v * 100;
+                }
+            );
+            console.log( newArr2 )
+
+            const newArr3 = arr.map( ( v ) =>  v * 100 );
+            console.log( newArr3 )
+        }
+        function mapTest(value){
+            return value * 10;
         }
     </script>
-
 </head>
-<body onload="test3()">
+<body onload="test5()">
     
 </body>
 </html>
