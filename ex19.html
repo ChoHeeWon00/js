@@ -100,16 +100,16 @@
             */
             document.querySelector(".test").innerHTML = msg;
         }
-        const ex07_btn = (value) => {
-            console.log("value : ", value)
-        }
-        const ex07 = () => {
-            const obj = { id:"aaa" }
-            //ex07_btn( obj['id'] )
-            document.querySelector(".test").innerHTML = `
-                <button onclick='ex07_btn( "${ obj['id'] }" )'>클릭</button>
-            `;
-        }
+const ex07_btn = (value) => {
+    console.log("value : ", value)
+}
+const ex07 = () => {
+    const obj = { id:"aaa" }
+    //ex07_btn( obj['id'] )
+    document.querySelector(".test").innerHTML = `
+        <button onclick='ex07_btn( "${ obj['id'] }" )'>클릭</button>
+    `;
+}
     </script>
 </head>
 <body onload="ex07()">
