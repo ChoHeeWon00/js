@@ -32,11 +32,7 @@
             */
             document.getElementById("table").innerHTML = table
         }
-         userInfo = [
-            { 'id' : 'aaa', 'name' : '홍길동', 'age' : 20 },
-            { 'id' : 'bbb','name' : '김개똥', 'age' : 30 },
-            { 'id' : 'ccc', 'name' : '고길동', 'age' : 40 }
-        ]
+         
         const getUser = () => {
             let msg = ""
             const uId = document.getElementById("u_id")
@@ -123,12 +119,23 @@
             `;
             return table;
         }
+        
+        const userDelete = () => {
+            const delId = document.getElementById("del_id");
+            /*
+            userInfo = userInfo.filter( (user) => {
+                if( user['id'] !== delId.value ){
+                    return user;
+                }
+            } );
+             */
+            userInfo = userInfo.filter( (user) => 
+                ( user['id'] !== delId.value ) ? user : undefined );
+            allUser();
+        }
     </script>
 </head>
 <body>
-
-
-
     <div id="table">목록을 보여 줍니다</div>
 	<hr>
 	<button type="button" onclick="allUser()">모든 회원 보기</button>
